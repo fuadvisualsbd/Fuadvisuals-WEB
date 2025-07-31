@@ -64,14 +64,15 @@
       padding: 20px;
     }
     footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  /* position: fixed; */  /* এই লাইনটি বাদ দাও */
+  /* bottom: 0; */        /* এই লাইনটিও বাদ দাও */
+  width: 100%;
+}
+
     @media (max-width: 600px) {
       nav a {
         float: none;
@@ -317,7 +318,70 @@
     background-position: 0% 50%;
   }
 }
+/* glow from background */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* পুরো স্ক্রিন vertically center করার জন্য */
+}
 
+.image-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  transition: 0.5s ease-in-out;
+  animation: glowPulse 4s infinite alternate;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #0ff, 0 0 50px #0ff, 0 0 80px #0ff;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+  }
+}
+/* paragraph tag ke animated */
+  .animated-paragraph {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+    animation: fadeGlow 4s ease-in-out infinite alternate;
+    background: linear-gradient(45deg, #0ff, #f0f, #0f0);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes fadeGlow {
+    0% {
+      opacity: 0.6;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+      background-position: 0% 50%;
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+      background-position: 100% 50%;
+    }
+    100% {
+      opacity: 0.6;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+      background-position: 0% 50%;
+    }
+  }
 
   </style>
 </head>
@@ -358,7 +422,7 @@
   </div>
 </section>
 
-<section class="super-animated-grid">
+<section class="image-container">
   <div class="animated-photo-card" data-aos="flip-left" data-aos-delay="100">
     <img src="photo/1.jpg" alt="Photo 1">
   </div>
