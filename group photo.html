@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FuadVisuals Website</title>
@@ -218,7 +221,7 @@
   }
 }
 
-/* photo animation css */
+/* photo 3d animation css */
 .super-animated-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -355,10 +358,33 @@
   </div>
 </section>
 
+<section class="super-animated-grid">
+  <div class="animated-photo-card" data-aos="flip-left" data-aos-delay="100">
+    <img src="photo/1.jpg" alt="Photo 1">
+  </div>
+  <div class="animated-photo-card" data-aos="zoom-in" data-aos-delay="200">
+    <img src="photo/2.jpg" alt="Photo 2">
+  </div>
+  <div class="animated-photo-card" data-aos="fade-up-right" data-aos-delay="300">
+    <img src="photo/3.jpg" alt="Photo 3">
+  </div>
+  <div class="animated-photo-card" data-aos="flip-up" data-aos-delay="400">
+    <img src="photo/4.jpg" alt="Photo 4">
+  </div>
+</section>
 
  
   <h1>Always Welcome</h1>
  <h1>footer</h1>
+ <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+  });
+</script>
+
   <footer>
     <p>&copy; 2025 Your Name. All rights reserved By Fuyad.</p>
   </footer>
