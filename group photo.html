@@ -382,6 +382,50 @@
       background-position: 0% 50%;
     }
   }
+/* scrolling text css */
+.scroll-container {
+  width: 100%;
+  background: #00000000;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 9999;
+  padding: 10px 0;
+}
+
+/* Glowing RGB Scroll Text */
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 30s linear infinite, rgb-glow 4s ease-in-out infinite;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* RGB color shifting animation */
+@keyframes rgb-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 
   </style>
 </head>
@@ -439,7 +483,7 @@
 
  
   <h1>Always Welcome</h1>
- <h1>footer</h1>
+
  <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -448,6 +492,13 @@
     once: true,
   });
 </script>
+
+ <div class="scroll-container">
+    <div class="scroll-text">
+      "এই সাইট একটু attitude দেখায়, কারণ সে জানে সে ভালো। আপনি যদি এখনো স্ক্রল করছেন, তবে ধরে নিচ্ছি আপনিও একটু ভালো রুচির মানুষ। ভাল লাগলে মনের মধ্যে রাখুন, খারাপ লাগলে বন্ধুদের দেখিয়ে জ্বালিয়ে দিন! আর হ্যাঁ… FuadVisuals-এ আসার জন্য আপনাকে ধন্যবাদ — আপনি ঠিক জায়গাতেই এসেছেন।"
+    </div>
+  </div>
+
 
   <footer>
     <p>&copy; 2025 Your Name. All rights reserved By Fuyad.</p>
